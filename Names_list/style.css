@@ -1,7 +1,7 @@
 body {
 	background-color: pink;
 }
-body: hover {
-	color: red;
-	background-color: blue;
+li:hover {
+	color: #800080;
+	background-color:  #DB7093;
 }

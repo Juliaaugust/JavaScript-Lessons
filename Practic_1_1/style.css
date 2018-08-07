@@ -1,0 +1,23 @@
+body {
+	background-color: #FDF5E6;
+}
+div {
+	height: 50px;
+	width: 50px;
+    border: 3px solid #fff; /* Белая рамка */
+    border-radius: 10px;
+    font-size: 2em;
+}
+/* Четные - бирюзовые */
+.even {
+	color: #00CED1;
+	background-color:  #AFEEEE;
+	outline: 2px solid #00CED1; /* Внешняя рамка */
+}
+
+/* Нечетные - розовые */
+.uneven {
+	color: #FF69B4;
+	background-color:  #FFC0CB;
+	outline: 2px solid #FF69B4;
+}
