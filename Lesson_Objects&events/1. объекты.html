@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Знакомство с объектами</title>
+	<script>
+		var user = {
+			name: 'Julia',
+			age: 21,
+			telNum: '89217482260',
+			email: 'julia@gmail.com'
+		};
+		user.age = 22;
+		alert("Объекту с именем " + user.name + " " + user.age + " года");
+
+		var cat = {
+			name: "Клюква",
+			age: 2,
+			type: "Шотландский вислоухий",
+			owner: user, //в свойстве owner сохранили другой объект
+			//функция meow в составе объекта называется методом
+			meow: function (n) {
+				for(var i=0; i<n; i++) {
+					alert("Мяяяу!")
+				}
+			},
+			showInfo: function () {
+				alert("Кличка: " + this.name + "\nВозраст: " + this.age + "\nПорода: " + this.type + "\nИмя хозяина: " + this.owner.name + "\nТелефон хозяина: " + this.owner.telNum);
+			}
+		};
+		cat.meow(3);
+		console.log(cat.owner.name); //Julia
+		cat.showInfo();
+
+		//копия объекта user
+		var user2 = Object.create(user);
+		user2.name = 'Lenya';
+		user2.telNum = '89111207684';
+		user2.email = 'bestleonya@mail.ru';
+
+		//создали копию объекта cat
+		var cat2 = Object.create(cat);
+		cat2.name = "Юпи";
+		cat2.age = 6;
+		cat2.owner = user2;
+
+		cat2.showInfo();
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

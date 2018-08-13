@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Объект document</title>
+	<script>
+		//взаимодействовать с веб-страницей можно только после ее загрузки
+		//поэтому весь код мы помещаем в функцию, которую сохраняем в window.onload
+
+		//функция называется обработчиком события
+		window.onload = function () {
+			var test = prompt("Введите что-нибудь для заголовка")
+			var h1 = document.getElementById("title");
+			h1.innerHTML = "Новый текст в <em>заголовке</em>:<br/>" + test;
+		}
+	</script>
+</head>
+<body>
+	<h1 id="title">Это какой-то заголовок</h1>
+</body>
+</html>

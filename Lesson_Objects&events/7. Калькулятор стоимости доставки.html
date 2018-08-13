@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Калькулятор стоимости доставки</title>
+	<meta charset="utf-8" />
+	<script>
+		window.onload = function () {
+			var zone = document.getElementById("zone");
+			var weight = document.getElementById("weight");
+			var calcBtn = document.getElementById("calculate");
+			var result = document.getElementById("result");
+
+			calcBtn.onclick = function () {
+				//тариф по умолчанию будет равен 200
+
+				var tax = 200;
+				if (zone.value =="city") {
+					tax = 100;
+				} else if (zone.value == "kad") {
+					tax = 150;
+				}
+
+				if(weight.value > 0) {
+					var total = weight.value.tax;
+					result.innerHTML = "стоимость доставки составляет " + total + "руб.";
+				} else {
+					alert("Вы ввели некорректное значение!");
+					weight.style.outline = "2px solid red";
+					weight.style.color = "red";
+				}
+			};
+		};
+	</script>
+</head>
+<body>
+	<p>
+		Куда доставить груз? <br />
+		<select id="zone">
+			<option value="city">По городу</option>
+			<option value="kad">За КАД</option>
+			<option value="lo">По Ленобласти</option>
+		</select>
+	</p>
+
+	<p>
+		Вес груза, кг: <br />
+		<input type="number" min="1" max="1000" id="weight" /> 
+	</p>
+
+	<button id="calculate">Рассчитать</button>
+
+	<p id="result"></p>
+</body>
+</html>

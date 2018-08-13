@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload = function () {
+			var katA = document.getElementById("inputA");
+			var katB = document.getElementById("inputB");
+			var btn = document.getElementById("btn");
+			var res = document.getElementById("res");
+
+			btn.onclick = function () {
+				if(katA.value > 0 && katB.value > 0){
+					var C = Math.sqrt(katA.value*katA.value + katB.value*katB.value);
+					console.log(C);
+					res.innerHTML = "<p>Гипотенуза равна: " + C + "</p>";
+
+					//возвращаем стили
+					katA.style.outline = null;
+					katB.style.outline = null;
+					
+				} else {
+					if(!(katA.value > 0) && (!(katB.value > 0))) {
+						katA.style.outline = "2px solid red";
+						katB.style.outline = "2px solid red";
+					} else if (!(katA.value > 0)) {
+						katA.style.outline = "2px solid red";
+						katB.style.outline = null;
+					} else if (!(katB.value > 0)) {
+						katB.style.outline = "2px solid red";
+						katA.style.outline = null;
+					}
+					alert ("Некорректное значение!");
+				}
+			};
+		};
+	</script>
+</head>
+<body>
+	<div id="divA">
+		<label>Катет A:</label>
+		<input type="number" id="inputA">
+	</div>
+	<br/>
+	<div id="divB">
+		<label>Катет B:</label>
+		<input type="number" id="inputB">
+	</div>
+	<hr/>
+	<div id="divBtn">
+		<button id="btn">Посчитать</button>
+	</div>
+	<div id="res">
+		
+	</div>
+</body>
+</html>

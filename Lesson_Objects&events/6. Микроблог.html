@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+	<title>Микроблог</title>
+	<meta charset="utf-8" />
+
+	<style>
+
+		#form {
+			width: 350px;
+			margin: 50px auto 0;
+			background: #e4e4e4;
+			padding: 10px;
+		}
+
+		textarea {
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		#blog {
+			width: 370px;
+			margin: 0 auto;
+		}
+
+		#blog p {
+			background: #e4e4e4;
+			padding: 15px;
+			border-radius: 10px;
+			border: 1px solid #555;
+		}
+
+	</style>
+
+	<script>
+		window.onload = function () {
+			var textarea = document.getElementById("message");
+			var sendBtn = document.getElementById("send");
+			var blog = document.getElementById("blog");
+
+			sendBtn.onclick = function () {
+				if(textarea.value != ""){
+					blog.innerHTML = "<p>" + textarea.value + "</p>" + blog.innerHTML;
+					textarea.value = "";
+					//удаляем стиль у тега
+					textarea.style.outline = null;
+				} else {
+					textarea.style.outline = "2px solid red";
+				}
+				textarea.focus(); //фокус в поле
+			};
+			//это событие возникает в момент нажатия пользователем любой клавиши клавиатуры, когда поле textarea находится в фокусе
+			//чтобы узнать, какую именно клавишу нажал пользователь, нужно использовать объект event
+			textarea.onkeydown = function (event) {
+				console.log(event.keyCode);
+
+				//13 - код клавиши Enter
+				if(event.keyCode == 13 && event.ctrlKey == true) {
+					//вызывает функцию, которая хранится в свойстве onclick объекта sendBtn
+					sendBtn.onclick();
+				}
+			}
+		};
+	</script>
+</head>
+<body>
+
+	<div id="form">
+		<textarea autofocus id="message" rows="4" placeholder="Введите текст сообщения..."></textarea>
+		<button id="send">Отправить</button>
+	</div>
+	<div id="blog">
+		
+	</div>
+
+</body>
+</html>
