@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+	<title>Да или нет</title>
+	<meta charset="utf-8" />
+	
+	<script src="jquery-3.3.1.min.js"></script>
+	<script>
+		$(function () {
+
+			var answer = $('#answer')
+			
+			$('#get_answer').click(function () {
+				var answers = ['нет', 'да', 'спросите позднее', 'не знаю', 'возможно', 'скорее нет', 'скорее да'];
+				var rand = Math.floor(Math.random()*answers.length);
+				// alert(answers[rand]);
+				answer.text(answers[rand]).fadeIn();
+			});
+
+			answer.click(function () {
+				answer.fadeOut();
+			});
+
+			$("body").keydown(function (event) {
+				if (event.keyCode == 27) {
+					answer.fadeOut();
+				}
+			});
+		});
+	</script>
+	<style>
+		#container {
+			width: 400px;
+			padding: 20px;
+			background: #e4e4e4;
+			font-size: 24px;
+		}
+
+		button {
+			border: 2px solid #666;
+			background: #111;
+			padding: 10px 15px;
+			color: #f7f7f7;
+
+			outline: 0;
+		}
+
+		button:hover {
+			background: #444;
+		}
+
+		button:active {
+			border-color: #fff;
+		}
+
+
+		#answer {
+			cursor: pointer;
+			background: rgba(0,0,0,0.8);
+			color: #f7f7f7;
+			text-align: center;
+
+			font-size: 60px;
+			padding-top: 300px;
+
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+
+			text-shadow: 0 0 5px #111;
+
+			display: none;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="container">
+		Задайте вопрос и нажмите кнопку!
+		<button id="get_answer">Узнать ответ!</button>
+	</div>
+
+	<div id="answer"></div>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Просмотр увеличенных фотографий</title>
+		<meta charset="utf-8" />
+		
+		<script src="jquery-3.3.1.min.js"></script>
+		<script>
+			$(function () {
+				var photo = $('#show_photo');
+
+				$('.image').click(function (event) {
+
+					event.preventDefault();
+
+					var href = $(this).attr('href');
+					photo
+						.css('background-image', 'url(' + href + ")")
+						.slideDown();
+				});
+
+				photo.click(function() {
+					photo.fadeOut();
+				});
+
+				$("body").keydown(function(ev){
+					if(ev.keyCode == 27) {
+						photo.fadeOut();
+					}
+				});
+			});
+
+		</script>
+
+		<style>
+			.image img{
+				width: 240px;
+			}
+
+			#show_photo {
+				cursor: pointer;
+				background: rgba(255,255,255,0.8) center center/contain no-repeat;
+
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+
+				display: none;
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<a href="pics/Koala.jpg" class="image"> 
+			<img src="pics/Koala.jpg" alt="" /> 
+		</a>
+
+		<a href="pics/Penguins.jpg" class="image"> 
+			<img src="pics/Penguins.jpg" alt="" /> 
+		</a>
+
+		<a href="pics/Desert.jpg" class="image"> 
+			<img src="pics/Desert.jpg" alt="" /> 
+		</a>
+
+		<a href="pics/Jellyfish.jpg" class="image"> 
+			<img src="pics/Jellyfish.jpg" alt="" /> 
+		</a>
+
+		<div id="show_photo"></div>
+		
+	</body>
+</html>

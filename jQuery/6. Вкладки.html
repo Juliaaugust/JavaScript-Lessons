@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Переключение вкладок</title>
+	<meta charset="utf-8" />
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script>
+		$(function(){
+			$(".tab-link").click(function () {
+				var href = $(this).attr('href');
+				var tab = $(href);
+				$(".tab.active").removeClass('active');
+				tab.addClass('active');
+
+				$(".tab-link.active").removeClass("active");
+
+				$(this).addClass("active");
+
+			});
+		});
+	</script>
+	<style>
+		.tab-link {
+			color: #888;
+			padding: 10px 15px;
+			border: 1px solid;
+			border-bottom: 0;
+			display: inline-block;
+			border-radius: 5px 5px 0 0;
+			vertical-align: bottom;
+			background: #fff;
+		}
+
+		.tab-link.active {
+			color: #111;
+			padding: 15px;
+			position: relative;
+			top: 1px;
+		}
+
+		.tab {
+			display: none;
+		}
+
+		.tab.active {
+			display: block;
+			border: 1px solid #111;
+			padding: 15px;
+		}
+
+		#tabs {
+			width: 600px;
+		}
+	</style>
+</head>
+<body>
+	
+	<nav>
+		<a href="#tab1" class="tab-link active">Первая вкладка</a>
+		<a href="#tab2" class="tab-link">Вторая</a>
+		<a href="#tab3" class="tab-link">Третья</a>
+		<a href="#tab4" class="tab-link">Новая вкладка</a>
+	</nav>
+	<div id="tabs">
+		<div id="tab1" class="tab active">
+			Это содержимое первой вкладки
+		</div>
+		<div id="tab2" class="tab">
+			Это вторая вкладка
+		</div>
+		<div id="tab3" class="tab">
+			Третья вкладка, здесь много-много-много текста
+		</div>
+		<div id="tab4" class="tab">
+			Это еще одна вкладка
+			<h1>test</h1>
+		</div>
+	</div>
+</body>
+</html>

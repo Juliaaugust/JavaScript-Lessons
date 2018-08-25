@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script>
+		window.onload = function () {
+			// при клике на кнопку блок показывается
+			$('#test').click(function() {
+				$('#block').show();
+			});
+
+			// при нажатии на сам блок он исчезает
+			$('#block').click(function () {
+				$(this).hide();
+			});
+		};
+	</script>
+
+	<style type="text/css">
+		#block {
+			display: none;
+			padding: 15px;
+			border: 2px solid;
+			font-size: 22px;
+		}
+	</style>
+</head>
+<body>
+	<button id="test">Показать</button>
+
+	<div id="block">Test</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Аккордеон</title>
+	<meta charset="utf-8" />
+	<script src="jquery-3.3.1.min.js"></script>
+	<script>
+		$(function () {
+			$(".accordion-title").click(function () {
+				var target = $(this).data("target");
+
+				$(".accordion-content").not(target).slideUp();
+				$(target).slideToggle();
+			});
+		});
+	</script>
+	<style>
+		#accordion {
+			width: 200px;
+			border: 1px solid;
+		}
+
+		.accordion-item {
+
+		}
+
+		.accordion-title {
+			padding: 7px 15px;
+			background: #e9e9e9;
+		}
+
+		.accordion-content {
+			padding: 7px 15px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="accordion">
+		<div class="accordion-item">
+			<div data-target="#block-1" class="accordion-title">Ссылка 1</div>
+			<div id="block-1" class="accordion-content">
+				Содержимое первого блока
+			</div>
+		</div>
+		<div class="accordion-item">
+			<div data-target="#block-2" class="accordion-title">Ссылка 2</div>
+			<div id="block-2" class="accordion-content">
+				Содержимое второго блока
+			</div>
+		</div>
+		<div class="accordion-item">
+			<div data-target="#block-3" class="accordion-title">Ссылка 3</div>
+			<div id="block-3" class="accordion-content">
+				Содержимое третьего блока
+			</div>
+		</div>
+		<div class="accordion-item">
+			<div data-target="#block-4" class="accordion-title">Ссылка 4</div>
+			<div id="block-4" class="accordion-content">
+				Содержимое четвертого блока
+			</div>
+		</div>
+	</div>
+</body>
+</html>

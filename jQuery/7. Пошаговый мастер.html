@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+	<title>Скрытие и показ текста</title>
+	<meta charset="utf-8" />
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script>
+		$(function(){
+			$(".step-button").click(function () {
+				var targets = $(this).attr('data-target');
+				$('.wizard-step.active').removeClass('active');
+				$(targets).addClass('active');
+			});
+		});
+	</script>
+	<style>
+		#wizard {
+			width: 450px;
+			height: 250px;
+			border: 2px solid;
+			padding: 30px;
+		}
+
+		.wizard-step {
+			display: none;
+		}
+
+		.wizard-step.active {
+			display: block;
+		}
+		
+		nav button{
+			font-size: 24px;
+			padding: 10px 15px;
+		}
+	</style>
+	</head>
+	<body>
+		<div id="wizard">
+			<nav>
+				<button class="step-button" data-target="#step-1">Шаг 1</button>
+				<button class="step-button" data-target="#step-2">Шаг 2</button>
+				<button class="step-button" data-target="#step-3">Шаг 3</button>
+				<button class="step-button" data-target="#step-4">Шаг 4</button>
+			</nav>
+			<div class="wizard-step active" id="step-1">
+				<h2>Шаг 1</h2>
+				ghjghj
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				<button class="step-button" data-target="#step-2">Далее</button>
+			</div>
+			<div class="wizard-step" id="step-2">
+				<h2>Шаг 2</h2>
+				 Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				<button class="step-button" data-target="#step-1">Назад</button>
+				<button class="step-button" data-target="#step-3">Далее</button>
+			</div>
+			<div class="wizard-step" id="step-3">
+				<h2>Шаг 3</h2>
+				 Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit ani
+				<button class="step-button" data-target="#step-2">Назад</button>
+				<button class="step-button" data-target="#step-4">Далее</button>
+			</div>
+			<div class="wizard-step" id="step-4">
+				<h2>Шаг 4</h2>
+				67567567567
+				<button class="step-button" data-target="#step-3">Назад</button>
+				<button class="step-button" data-target="#step-5">Завершить!</button>
+			</div>
+			<div class="wizard-step" id="step-5">
+				<h2>Ура! Всё сделано!</h2>
+			</div>
+		</div>
+	</body>
+	</html>
