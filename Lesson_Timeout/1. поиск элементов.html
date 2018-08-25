@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload = function () {
+			// в переменной будет группа элементов (массив)
+			var buttons = document.querySelectorAll("button");
+			// alert(buttons.length);
+
+			// чтобы выполнить обработку массива элементов, нужно написать цикл
+			for (var i=0; i<buttons.length; i++) {
+				buttons[i].style.border = "2px solid red";
+
+				// обработка событий выполняетс аналогично, нужно указать индекс элемента в массиве
+				buttons[i].onclick = function () {
+					// т.к. функция прикрепляется к нескольким объектам,
+					// мы можем получить доступ именно к той кнопке, на которой был выполнен клик
+					// через специальную переменную this (смотрите материалы урока 4) 
+					alert(this.innerHTML);
+				};
+			}
+		};
+	</script>
+</head>
+<body>
+	<button>Кнопка 1</button>
+	<button>А это кнопка 2</button>
+	<button>3</button>
+	<button>И здесь есть номер 4</button>
+	<button>5</button>
+</body>
+</html>

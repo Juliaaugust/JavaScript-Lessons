@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+	<title>Скрытие и показ текста</title>
+	<meta charset="utf-8" />
+	<script>
+		window.onload = function () {
+			var links = document.querySelectorAll(".show-spoiler");
+			for (var i=0; i<links.length; i++) {
+				links[i].onclick = function () {
+					var target = this.getAttribute("data-target");
+					var spoiler = document.querySelector(target);
+
+					spoiler.classList.toggle("spoiler-visible");
+
+					if (spoiler.classList.contains("spoiler-visible")) {
+						this.innerHTML = "Свернуть";
+					} else {
+						this.innerHTML = "Развернуть";
+					}
+				};
+			}
+		};
+	</script>
+	<style>
+		.news {
+			background: #e9e9e9;
+			padding: 20px;
+			border-radius: 5px;
+			margin-bottom: 15px;
+			width: 600px;
+		}
+
+		.spoiler {
+			display: none;
+		}
+
+		.spoiler-visible {
+			display: block;
+		}
+
+		.show-spoiler {
+			text-decoration: none;
+			border-bottom: 1px dashed;
+			color: #44a0ff;
+			cursor: pointer;
+		}
+
+		.show-spoiler:hover {
+			color: #f00;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="news">
+		Это какой-то текст новости. Что-то вроде краткого анонса.
+		<div class="spoiler" id="news-1">
+			А это продолжение новости. Здесь уже гораздо больше текста. 
+			Но его увидеть можно только после нажатия на кнопку "читать далее".
+		</div>
+		<div><span data-target="#news-1" class="show-spoiler">Развернуть</span></div>
+	</div>
+
+	<div class="news">
+		Это какой-то текст новости. Что-то вроде краткого анонса.
+		<div class="spoiler" id="news-2">
+			А это продолжение новости. Здесь уже гораздо больше текста. 
+			Но его увидеть можно только после нажатия на кнопку "читать далее".
+		</div>
+		<div><span data-target="#news-2" class="show-spoiler">Развернуть</span></div>
+	</div>
+
+	<div class="news">
+		Это какой-то текст новости. Что-то вроде краткого анонса.
+		<div class="spoiler" id="news-3">
+			А это продолжение новости. Здесь уже гораздо больше текста. 
+			Но его увидеть можно только после нажатия на кнопку "читать далее".
+		</div>
+		<div><span data-target="#news-3" class="show-spoiler">Развернуть</span></div>
+	</div>
+
+	<div class="news">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi dolorem aperiam cupiditate delectus sit nisi, hic necessitatibus at maxime eligendi animi exercitationem architecto veniam, nihil reiciendis sapiente illo aliquam accusamus.вости. Что-то вроде краткого анонса.
+		<div class="spoiler" id="news-4">
+			at maxime eligendi animi exercitationem architecto veniam, nihil reiciendis sapiente illo aliquam accusamus.вости. Что-то вроде краткого анонса.at maxime eligendi animi exercitationem architecto veniam, nihil reiciendis sapiente illo aliquam accusamus.вости. Что-то вроде краткого анонса.at maxime eligendi animi exercitationem architecto veniam, nihil reiciendis sapiente illo aliquam accusamus.вости. Что-то вроде краткого анонса.at maxime eligendi animi exercitationem architecto veniam, nihil reiciendis sapiente illo aliquam accusamus.вости. Что-то вроде краткого анонса.at maxime eligendi animi exercitationem architecto veniam, nihil reiciendis sapiente illo aliquam accusamus.вости. Что-то вроде краткого анонса.at maxime eligendi animi exercitationem architecto veniam, nihil reiciendis sapiente illo aliquam accusamus.вости. Что-то вроде краткого анонса.
+		</div>
+		<div><span data-target="#news-4" class="show-spoiler">Развернуть</span></div>
+	</div>
+
+
+</body>
+</html>

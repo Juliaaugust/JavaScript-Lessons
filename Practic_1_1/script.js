@@ -9,9 +9,9 @@ for(var i=0; i<arr.length; i++){
 
 		default:
 		if(i%2==0){
-			document.write(' <div class="even" align="center">' + arr[i]+'</div> ');
+			document.write('<div class="even" align="center">' + arr[i]+'</div> ');
 		} else {
-			document.write(' <div class="uneven" align="center">' + arr[i]+'</div> ');
+			document.write('<div class="uneven" align="center">' + arr[i]+'</div> ');
 		}
 	}
 }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>вывод текста с интервалом</title>
+	<meta charset="utf-8" />
+	<script>
+		window.onload = function () {
+			var div = document.getElementById("text");
+			// сохранили в переменную копию текста из str
+			var str = div.innerHTML;
+			// а оригинал из самого блока удаляем
+			div.innerHTML = "";
+
+			var i = 0;
+
+			var timer = setInterval(function () {
+				// div.innerHTML += str[i];
+				div.innerHTML = div.innerHTML + str[i];
+
+				i++;
+
+				// если дошли до конца строки
+				if (i >= str.length) {
+					// остановить таймер
+					clearInterval(timer);
+				}
+			}, 50);
+
+
+		};
+	</script>
+	<style>
+		#text:after {
+			content: '';
+			display: inline-block;
+			border-right: 1px solid #111;
+			height: 16px;
+			vertical-align: middle;
+			margin-left: 2px;
+			animation: 1s blink infinite;
+		}
+
+		@keyframes blink {
+			0% {opacity: 1;}
+			100% {opacity: 0;}
+		}
+	</style>
+</head>
+<body>
+	<div id="text">Это текст, который нужно будет вывести побуквенно (с интервалом)</div>
+</body>
+</html>

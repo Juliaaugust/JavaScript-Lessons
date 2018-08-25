@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Просмтр фотографий</title>
+		<meta charset="utf-8" />
+		<style>
+			.thumbs {
+				padding: 10px;
+			}
+
+			.thumb {
+				display: inline-block;
+				border: 2px solid transparent;
+				line-height: 0;
+			}
+
+			.thumb:hover {
+				border-color: #444;
+			}
+
+			#photo  {
+				background: no-repeat top left/cover;
+				width: 600px;
+				height: 450px;
+			}
+		</style>
+		<script>
+			window.onload = function () {
+				var thumbs = document.getElementsByClassName('thumb');
+				var photo = document.getElementById('photo');
+
+				var i = 0;
+
+				while (i < thumbs.length) {
+					thumbs[i].onclick = function () {
+						var image = this.getAttribute("data-src");
+						photo.style.backgroundImage = "url(" + image + ")";
+					};
+
+					i++;
+				}
+				
+			};
+		</script>
+
+	</head>
+
+	<body>
+		<div class="thumbs">
+			<div class="thumb" data-src="photos/1.jpg">
+				<img src="photos/1_sm.jpg" alt="" />
+			</div>
+			<div class="thumb" data-src="photos/2.jpg">
+				<img src="photos/2_sm.jpg" alt="" />
+			</div>
+			<div class="thumb" data-src="photos/3.jpg">
+				<img src="photos/3_sm.jpg" alt="" />
+			</div>
+			<div class="thumb" data-src="photos/4.jpg">
+				<img src="photos/4_sm.jpg" alt="" />
+			</div>
+		</div>
+		<div id="photo"></div>
+	</body>
+</html>

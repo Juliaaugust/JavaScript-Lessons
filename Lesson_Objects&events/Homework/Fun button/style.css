@@ -1,10 +1,45 @@
 body{
-	background-color: pink;
+	background-color: #FFFAF0;
+	margin-left: 15px;
+	margin-top: 10px;
 }
-button {
-	background-color: gray;
-	color:pink;
+
+p {
+	margin-top: 0.3em; /* Отступ сверху */
+    margin-bottom: 0em; /* Отступ снизу */
 }
-#infoClick {
-	background-color: red;
+
+#justBtn {
+	background-color: #32CD32;
+	color:  #2F4F4F;
+	border-radius: 10px;
+	width: 100px;
+	height: 50px;
+	font-size: 25px;
+	margin-left: 175px;
+	margin-bottom: 15px;
+}
+
+#toZero {
+	background-color: #AFEEEE;
+	color:  #008080;
+	border-radius: 6px;
+	width: 85px;
+	height: 25px;
+	font-size: 15px;
+}
+.counter {
+	height: 55px;
+	width: 450px;
+	background-color: #BC8F8F;
+	color:  #FFE4E1;
+	font-family: "Verdana";
+	text-align: center;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#countClick {
+	font-size: 22px;
+	font-style: italic;
 }
