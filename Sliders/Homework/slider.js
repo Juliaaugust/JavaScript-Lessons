@@ -29,9 +29,9 @@ $(function() {
 		changeSlide(dotNumber);
 	});
 
-	// navigationDots.removeClass("active");
-	// navigationDots.filter("[data-number='"+ currSlide + "']")
-	// 		.addClass("active");
+	navigationDots.removeClass("active");
+	navigationDots.filter("[data-number='"+ currSlide + "']")
+			.addClass("active");
 
 	var changeSlide = function(dir) {
 		if (dir == "next") {
